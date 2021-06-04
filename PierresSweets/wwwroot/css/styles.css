@@ -6,6 +6,7 @@ div#footer {
 	color:#CCC;
 	background:#333;
 	padding:8px;
+  text-align: center;
 }
 
 body {
@@ -24,4 +25,13 @@ body {
 
 h1, h2 {
   text-align: center;
+}
+
+a {
+  color: #bc6c25;
+}
+
+a:hover {
+  color: #a76022;
+  text-decoration: none;
 }
