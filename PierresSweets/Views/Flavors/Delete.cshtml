@@ -4,7 +4,7 @@
 
 @model PierresSweets.Models.Flavor
 
-<h2>Are you sure you want to delete @Html.DisplayNameFor(model => model.FlavorName)</h2>
+<h2>Are you sure you want to delete @Html.DisplayFor(model => model.FlavorName)</h2>
 
 @Html.DisplayNameFor(model => model.FlavorName): @Html.DisplayFor(model => model.FlavorName)
 @using (Html.BeginForm())

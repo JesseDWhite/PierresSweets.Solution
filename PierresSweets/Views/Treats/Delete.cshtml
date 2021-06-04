@@ -4,7 +4,7 @@
 
 @model PierresSweets.Models.Treat
 
-<h2>Are you sure you want to delete @Html.DisplayNameFor(model => model.TreatName)?</h2>
+<h2>Are you sure you want to delete @Html.DisplayFor(model => model.TreatName)?</h2>
 
 @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
 @using (Html.BeginForm())
