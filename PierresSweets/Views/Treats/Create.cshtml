@@ -18,7 +18,10 @@
   @Html.TextBoxFor(model => model.Price)
 
   @Html.Label("Select A Flavor")
-  @Html.DropDownList("FlavorId")
+  @Html.DropDownList("FlavorId", "-select flavor-")
+
+  @Html.Label("Select a User")
+  @Html.DropDownList("UserName", "-select user-")
 
   <input type="submit" value="Add New Treat" class="btn btn-success" />
 }
