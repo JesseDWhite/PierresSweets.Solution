@@ -101,7 +101,7 @@ namespace PierresSweets.Controllers
     }
 
     [HttpPost]
-    public ActionResult AddFavorite(Treat treat, int FlavorId)
+    public ActionResult AddFlavor(Treat treat, int FlavorId)
     {
       if (FlavorId != 0)
       {
@@ -114,17 +114,20 @@ namespace PierresSweets.Controllers
     public ActionResult AddFavorite(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
-      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "FlavorName");
+      ViewBag.UserId = new SelectList(_userManager.Users, "Id", "UserName");
       return View(thisTreat);
     }
 
     [HttpPost]
-    public ActionResult AddFlavor(Treat treat, int FlavorId)
+    public async Task<ActionResult> AddFavorite(Treat treat, string UserId)
     {
-      if (FlavorId != 0)
+      var selectedUser = await _userManager.FindByIdAsync(UserId);
+      treat.User = selectedUser;
+      if (UserId != null)
       {
-        _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = treat.TreatId });
+        _db.CustomerTreat.Add(new CustomerTreat() { TreatId = treat.TreatId, CustomerId = UserId });
       }
+      _db.Entry(treat).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

@@ -6,7 +6,7 @@ namespace PierresSweets.Models
   {
     public int CustomerTreatId { get; set; }
     public int TreatId { get; set; }
-    public int CustomerId { get; set; }
+    public string CustomerId { get; set; }
 
     public virtual Treat Treat { get; set; }
     public virtual ApplicationUser Customer { get; set; }
