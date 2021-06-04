@@ -6,7 +6,8 @@ namespace PierresSweets.Models
   {
     public Treat()
     {
-      this.JoinEntities = new HashSet<FlavorTreat>();
+      this.FlavorTreatJoinEntities = new HashSet<FlavorTreat>();
+      this.CustomerTreatJoinEntities = new HashSet<CustomerTreat>();
     }
 
     public int TreatId { get; set; }
@@ -14,6 +15,7 @@ namespace PierresSweets.Models
     public string Description { get; set; }
     public float Price { get; set; }
     public virtual ApplicationUser User { get; set; }
-    public virtual ICollection<FlavorTreat> JoinEntities { get; }
+    public virtual ICollection<FlavorTreat> FlavorTreatJoinEntities { get; }
+    public virtual ICollection<CustomerTreat> CustomerTreatJoinEntities { get; set; }
   }
 }
