@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresSweets.Models.Treat
+@using PierresSweets.Models
+
+<h1>Add @Model.TreatName to favorites</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TreatId)
+  @Html.HiddenFor(model => model.Description)
+  @Html.HiddenFor(model => model.Price)
+
+  @Html.Label("Select Customer")
+  @Html.DropDownList("UserId")
+
+  <input type="submit" value="Add to Favorites" />
+}
+<p>@Html.ActionLink("Back to All Treats", "Index")</p>
