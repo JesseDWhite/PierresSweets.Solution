@@ -23,7 +23,7 @@ namespace PierresSweets.Controllers
     {
       return View();
     }
-    // Create an account
+
     public IActionResult Register()
     {
       return View();
