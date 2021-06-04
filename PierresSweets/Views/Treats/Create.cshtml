@@ -8,21 +8,19 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.TreatName)
-  @Html.TextBoxFor(model => model.TreatName)
+  @Html.Label("Treat Name")
+  @Html.TextBoxFor(model => model.TreatName, null, new { @class = "form-control"})
 
   @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description , null, new { @class = "form-control"})
 
   @Html.LabelFor(model => model.Price)
-  @Html.TextBoxFor(model => model.Price)
+  @Html.TextBoxFor(model => model.Price, null, new { @class = "form-control", @type="number"})
+  <div>
+    @Html.Label("Select A Flavor")
+    @Html.DropDownList("FlavorId", "-select flavor-")
+  </div>
 
-  @Html.Label("Select A Flavor")
-  @Html.DropDownList("FlavorId", "-select flavor-")
-
-  @* @Html.Label("Select a User")
-    @Html.DropDownList("Id", "-select user-") *@
-
-  <input type="submit" value="Add New Treat" class="btn btn-success" />
+  <input type="submit" value="Add New Treat" class="btn btn-success mt-5" />
 }
-<p>@Html.ActionLink("Back to All Treats", "Index")</p>
+<p>@Html.ActionLink("< Back to All Treats", "Index", "Treats", null, new { @class = "btn btn-dark mt-3"})</p>

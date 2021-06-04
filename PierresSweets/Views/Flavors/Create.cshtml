@@ -8,7 +8,7 @@
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.FlavorName)
-  @Html.TextBoxFor(model => model.FlavorName)
-  <input type="submit" value="Add New Flavor" />
+  @Html.TextBoxFor(model => model.FlavorName, new { @class = "form-control"})
+  <input type="submit" value="Add New Flavor" class="btn btn-success mt-5" />
 }
-<p>@Html.ActionLink("Show All Flavors", "Index")</p>
+<p>@Html.ActionLink("< Back to All Flavors", "Index", "Flavors", null, new { @class = "btn btn-dark mt-5"})</p>

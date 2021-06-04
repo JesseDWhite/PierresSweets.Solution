@@ -9,6 +9,6 @@
 @Html.DisplayNameFor(model => model.FlavorName): @Html.DisplayFor(model => model.FlavorName)
 @using (Html.BeginForm())
 {
-  <input type="submit" value="Delete" />
+  <input type="submit" value="Delete" class="btn btn-danger" />
 }
-@Html.ActionLink("Back to All Flavors", "Index")
+@Html.ActionLink("< Back to All Flavors", "Index", "Flavors", null, new { @class = "btn btn-dark"})

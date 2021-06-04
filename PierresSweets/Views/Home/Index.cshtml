@@ -3,7 +3,10 @@
 }
 
 <h1>Pierre's Sweet and Savory Treats</h1>
-<p>@Html.ActionLink("View All Treats", "Index", "Treats")</p>
-<p>@Html.ActionLink("View All Flavors", "Index", "Flavors")</p>
-<p>@Html.ActionLink("Create An Account Or Log In", "Index", "Account")</p>
-<p>@Html.ActionLink("See My Fvorites", "Favorites", "Treats")</p>
+<div class="button-group">
+  <p>@Html.ActionLink("View All Treats", "Index", "Treats", null, new { @class = "btn btn-dark mt-5"})</p>
+  <p>@Html.ActionLink("View All Flavors", "Index", "Flavors", null, new { @class = "btn btn-dark"})</p>
+  <p>@Html.ActionLink("Create An Account", "Index", "Register", null, new { @class = "btn btn-dark"})</p>
+  <p>@Html.ActionLink("Log In", "Index", "Login", null, new { @class = "btn btn-dark"})</p>
+  <p>@Html.ActionLink("See My Fvorites", "Favorites", "Treats", null, new { @class = "btn btn-dark"})</p>
+</div>
