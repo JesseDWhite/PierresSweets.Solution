@@ -8,6 +8,12 @@ div#footer {
 	padding:8px;
 }
 
+body {
+  background-image: url(../img/background-image-1.jpg);
+  background-size: 100%;
+  min-height: 95vh;
+}
+
 .card {
   margin: 30px;
   padding: 30px;
