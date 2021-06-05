@@ -13,13 +13,13 @@
   @Html.HiddenFor(model => model.TreatId)
 
   @Html.LabelFor(model => model.TreatName)
-  @Html.EditorFor(model => model.TreatName)
+  @Html.EditorFor(model => model.TreatName , null, new { @class = "form-control"})
 
   @Html.LabelFor(model => model.Description)
-  @Html.EditorFor(model => model.Description)
+  @Html.EditorFor(model => model.Description , null, new { @class = "form-control"})
 
   @Html.LabelFor(model => model.Price)
-  @Html.EditorFor(model => model.Price)
+  @Html.EditorFor(model => model.Price, null, new { @class = "form-control", @type="number", @onchange="setTwoNumberDecimal", @min="0", @max="10", @step="0.25", @value="0.00"})
 
   @Html.Label("Select a Flavor")
   @Html.DropDownList("FlavorId")
