@@ -53,6 +53,7 @@ _Pierre is back and continues to grow his massive monopoly on the baked goods ma
 * _Price only allows increments of $0.25._
 * _User favorites page does not show favorites that have been added._
 * _Buttons on some of the pages are in a bad spot with their sizing and position._
+* _Background image does not fit the size of the page it the screen is minimized._
 ## License ⚖
 _MIT © Jesse White 2021_
 ## Contact Information 🤳
