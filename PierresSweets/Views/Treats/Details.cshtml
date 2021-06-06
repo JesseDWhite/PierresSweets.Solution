@@ -7,32 +7,35 @@
 
 <h2>@Html.DisplayFor(model => model.TreatName) Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
-<h3>@Html.DisplayNameFor(model => model.Price): $@Html.DisplayFor(model => model.Price)</h3>
+<div class="card" id="treat-details-card">
+  <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+  <h3>@Html.DisplayNameFor(model => model.Price): $@Html.DisplayFor(model => model.Price)</h3>
 
-@if (@Model.FlavorTreatJoinEntities.Count == 0)
-{
-  <p>@Html.DisplayFor(model => model.TreatName) does not have any flavors associated with it yet.</p>
-}
-else
-{
-  <h4>Flavors that @Html.DisplayFor(model => model.TreatName) contains:</h4>
-  <ul>
-    @foreach (var join in Model.FlavorTreatJoinEntities)
-    {
-      <li>@Html.ActionLink($"{@join.Flavor.FlavorName}", "Details", "Flavors", new {id = join.Flavor.FlavorId})</li>
-      @using (Html.BeginForm("DeleteFlavor", "Treats"))
+  @if (@Model.FlavorTreatJoinEntities.Count == 0)
+  {
+    <p>@Html.DisplayFor(model => model.TreatName) does not have any flavors associated with it yet.</p>
+  }
+  else
+  {
+    <h4>Flavors that @Html.DisplayFor(model => model.TreatName) contains:</h4>
+    <ul>
+      @foreach (var join in Model.FlavorTreatJoinEntities)
       {
-        @Html.Hidden("joinId", @join.FlavorTreatId)
-        <input type="submit" value="Remove Flavor" class="btn btn-danger btn-sm" />
+        <li>@Html.ActionLink($"{@join.Flavor.FlavorName}", "Details", "Flavors", new {id = join.Flavor.FlavorId})</li>
+        @using (Html.BeginForm("DeleteFlavor", "Treats"))
+        {
+          @Html.Hidden("joinId", @join.FlavorTreatId)
+          <input type="submit" value="❌ Remove Flavor" />
+        }
       }
-    }
-  </ul>
-}
+    </ul>
+    <p>@Html.ActionLink("👈 Back to All Treats", "Index", null, new { @class = "btn btn-dark"})</p>
+  }
+</div>
 
-<p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId } , new { @class = "btn btn-warning"})</p>
-
-<p>@Html.ActionLink("< Back to All Treats", "Index", null, new { @class = "btn btn-dark"})</p>
-<p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId }, new { @class = "btn btn-dark"})</p>
-<p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId }, new { @class = "btn btn-dark"})</p>
-<p>@Html.ActionLink("Add to My Favorites", "AddFavorite", new {id = Model.TreatId}, new { @class = "btn btn-dark"})</p>
+<div class="details-button-block" align="center">
+  <p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId } , new { @class = "btn btn-warning"})</p>
+  <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId }, new { @class = "btn btn-dark"})</p>
+  <p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId }, new { @class = "btn btn-dark"})</p>
+  <p>@Html.ActionLink("Add to My Favorites", "AddFavorite", new {id = Model.TreatId}, new { @class = "btn btn-dark"})</p>
+</div>
