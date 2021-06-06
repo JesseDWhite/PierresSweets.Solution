@@ -17,5 +17,6 @@
     <p class="card flavor-card">@Html.ActionLink($"{flavor.FlavorName}", "Details", new { id = flavor.FlavorId })</p>
   }
 </ul>
-
-<p>@Html.ActionLink("Add New Flavor", "Create")</p>
+<div class="button-group">
+  <p>@Html.ActionLink("Add New Flavor", "Create","Flavors", null, new { @class = "btn btn-dark"})</p>
+</div>

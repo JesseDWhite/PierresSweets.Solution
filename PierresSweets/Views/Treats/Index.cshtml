@@ -19,4 +19,6 @@ else
   <h3>No treats have been added yet</h3>
 }
 
-<p>@Html.ActionLink("Add New Treat", "Create")</p>
+<div class="button-group">
+  <p>@Html.ActionLink("Add New Treat", "Create","Treats", null, new { @class = "btn btn-dark"})</p>
+</div>
